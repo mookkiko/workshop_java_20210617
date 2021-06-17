@@ -10,6 +10,11 @@ public class Employee {
     public Employee(){
         this("mook","kiko");
     }
+
+    public Employee(int id) {
+        this.id = id;
+    }
+
     public Employee(String fname, String lname){
         this.fname = fname;
         this.lname = lname;
