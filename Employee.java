@@ -8,7 +8,7 @@ public class Employee {
 
     //Constructor
     public Employee(){
-        this("mook","kiko");
+        this("","");
     }
 
     public Employee(int id) {

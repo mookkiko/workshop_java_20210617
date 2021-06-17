@@ -16,10 +16,10 @@ public class EmployeeTest {
     }
 
     @Test
-    @DisplayName("เมืื่อทำการสร้าง employee ด้วย somkiat pui " + "จะต้องได้ fullname = 'somkiat : pui'")
+    @DisplayName("เมืื่อทำการสร้าง employee ด้วย fname+lname " + "จะต้องได้ fullname = 'fname : lname'")
     public void case02() {
-        String expectedResult = "somkiat : pui";
-        Employee demo = new Employee("somkiat", "pui");
+        String expectedResult = "mookki : kiki";
+        Employee demo = new Employee("mookki", "kiki");
         String actualResult = demo.getFullName();
         // Assert or check
         assertEquals(expectedResult, actualResult);
