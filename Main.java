@@ -6,4 +6,4 @@ public class Main {
         String result = Tanyaluk.getFullName();
         System.out.println(result);
     }
-}
+}//
