@@ -14,19 +14,28 @@
     *5) => 5-1 =5
  4. result = 1,2,3,4,5**/
 
+
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class MyRange {
 
     private final String input;
 
+
     public MyRange(String input) {
         this.input = input;
     }
 
+
     public boolean checkStartWithInclude() {
         return input.startsWith("[");
+    }
+
+    public boolean checkStartWithInclude2() {
+        return input.endsWith("]");
     }
 
     public int getFirstNumber() {
@@ -39,30 +48,29 @@ public class MyRange {
 
     }
 
-    public String getResult() {
-        int firstNumber = getFirstNumber();
-        int secondNumber = 5;
-//        String[] results = new String[secondNumber - firstNumber + 1];
-        // Collection Framework
-        List<String> results = new ArrayList<>();
-        for (int i = firstNumber; i < secondNumber + 1 ; i++) {
-            results.add(String.valueOf(i));
-        }
-        return String.join(",", results);
-    }
-
-
-    public boolean checkStartWithExclude() {
-            return input.startsWith("(");
-    }
-
     public int getLastNumber() {
-        int LastNumber = Character.getNumericValue(input.charAt(1));
-        if( checkStartWithExclude() ) {
+        int LastNumber = 5;
+        if( checkStartWithInclude2() ) {
             return LastNumber;
         }
         return LastNumber - 1;
 //        return input.charAt(1) - 48;
 
     }
+
+    public String getResult() {
+        int firstNumber = getFirstNumber();
+        int LastNumber = getLastNumber();
+        //int secondNumber = 5;
+//        String[] results = new String[secondNumber - firstNumber + 1];
+        // Collection Framework
+        List<String> results = new ArrayList<>();
+        for (int i = firstNumber; i < LastNumber + 1 ; i++) {
+            results.add(String.valueOf(i));
+        }
+        return String.join(",", results);
+    }
+
+
+
 }
